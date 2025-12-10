@@ -17,7 +17,7 @@ function displayOrders() {
             <i class="fa-solid fa-box mb-3" style="font-size: 3rem;"></i>
             <h3>No orders yet</h3>
             <p>You haven't placed any orders yet. Start shopping now!</p>
-            <a href="./index.html" class="btn btn-primary-custom mt-3">Continue Shopping</a>
+            <a href="/" class="btn btn-primary-custom mt-3">Continue Shopping</a>
         </div> 
         `;
         return;

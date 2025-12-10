@@ -18,7 +18,7 @@ function displayWishlist() {
                 <i class="fa-solid fa-heart mb-3" style="font-size: 3rem;"></i>
                 <h3>Your wishlist is empty</h3>
                 <p>Add products to your wishlist to save them for later</p>
-                <a href="./index.html" class="btn btn-primary-custom mt-3">Continue Shopping</a>
+                <a href="/" class="btn btn-primary-custom mt-3">Continue Shopping</a>
             </div>
         </div> 
         `;

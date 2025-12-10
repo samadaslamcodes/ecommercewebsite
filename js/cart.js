@@ -20,7 +20,7 @@ function getCartItem() {
             <div class="alert alert-warning" role="alert">
                 <i class="fa-solid fa-cart-shopping mb-3" style="font-size: 3rem;"></i>
                 <h3>Your cart is empty</h3>
-                <a href="./index.html" class="btn btn-primary-custom mt-3">Go back to shop</a>
+                <a href="/" class="btn btn-primary-custom mt-3">Go back to shop</a>
             </div>
         </div> 
         `;
@@ -286,7 +286,7 @@ function selectPayment(method) {
         }).then(() => {
             // Clear cart after order
             localStorage.removeItem("cartItems");
-            window.location.href = "./orders.html";
+            window.location.href = "/orders";
         });
     } else if (method === 'online') {
         Swal.fire({
@@ -303,7 +303,7 @@ function selectPayment(method) {
                 confirmButtonText: "View Orders"
             }).then(() => {
                 localStorage.removeItem("cartItems");
-                window.location.href = "./orders.html";
+                window.location.href = "/orders";
             });
         });
     }

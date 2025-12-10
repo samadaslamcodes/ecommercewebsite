@@ -47,7 +47,7 @@ fetch(`https://dummyjson.com/products/${item}`)
             <p class="lead mb-4">${res.description}</p>
             
             <div class="d-grid gap-2 d-md-block mb-4">
-                <a href="./index.html" class="btn btn-outline-dark btn-sm px-4">
+                <a href="/" class="btn btn-outline-dark btn-sm px-4">
                     <i class="fa-solid fa-arrow-left"></i> Go Back
                 </a>
                 <button class="btn btn-primary-custom btn-sm px-4 ms-md-2" onclick="addtoCart()">
@@ -220,5 +220,5 @@ function addRecommendedToCart(productId) {
 
 function viewProduct(productId) {
   localStorage.setItem("id", productId);
-  window.location.href = "./single.html";
+  window.location.href = "/product/1";
 }

@@ -174,7 +174,7 @@ function toggleWishlist(productId, event) {
 
 const seeMore = (id) => {
   localStorage.setItem("id", id)
-  window.location = "./single.html"
+  window.location = "/product/1"
 }
 
 function addtoCart(index) {

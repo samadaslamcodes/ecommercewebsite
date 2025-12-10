@@ -1,0 +1,49 @@
+{
+  "buildCommand": "echo 'Build complete'",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/html/index.html"
+    },
+    {
+      "source": "/categories",
+      "destination": "/html/categories.html"
+    },
+    {
+      "source": "/cart",
+      "destination": "/html/cart.html"
+    },
+    {
+      "source": "/product/:id",
+      "destination": "/html/single.html"
+    },
+    {
+      "source": "/wishlist",
+      "destination": "/html/wishlist.html"
+    },
+    {
+      "source": "/orders",
+      "destination": "/html/orders.html"
+    },
+    {
+      "source": "/visit",
+      "destination": "/html/visit.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

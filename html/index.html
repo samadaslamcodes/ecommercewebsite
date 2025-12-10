@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.SHOP SAMAD.IO</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">E.SHOP SAMAD.IO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./categories.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cart.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./visit.html">Visit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./orders.html">
+                            <i class="fa-solid fa-history"></i> Orders
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-sm btn-outline-dark rounded-circle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <div class="cart-icon-wrapper" id="cart-btn-container">
+                            <a href="./wishlist.html" class="btn btn-dark rounded-circle btn-sm" title="Wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                            <span class="cart-badge" id="wish-spn">0</span>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <div class="cart-icon-wrapper" id="cart-btn-container">
+                            <a href="./cart.html" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                            <span class="cart-badge" id="spn">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.vexels.com/content/194698/preview/shop-online-slider-template-4f2c60.png"
+                        class="d-block w-100" alt="Shop Online">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/free-vector/grocery-store-sale-banner-template_23-2151089846.jpg"
+                        class="d-block w-100" alt="Grocery Sale">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/premium-vector/healthy-vegetable-fruit-grocery-delivery-facebook-cover-design-social-media-post-template_584651-100.jpg"
+                        class="d-block w-100" alt="Healthy Food">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="container my-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Search products..." onkeyup="filterProducts()">
+            </div>
+            <div class="col-md-3">
+                <select id="categoryFilter" class="form-select form-select-lg" onchange="filterProducts()">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="home">Home</option>
+                    <option value="beauty">Beauty</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select id="sortFilter" class="form-select form-select-lg" onchange="filterProducts()">
+                    <option value="">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container products-container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="row g-4" id="products-list">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Checkout Button (Floating or fixed bottom if needed, currently just placed at bottom) -->
+    <div class="container text-center my-5">
+        <button onclick="checkME()" class="btn btn-primary-custom btn-lg">Proceed to Checkout</button>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">What Our Customers Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Amazing quality products and fast delivery! Highly recommended."</p>
+                        <h6>Sarah Ahmed</h6>
+                        <small class="text-muted">Verified Buyer</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Great prices and excellent customer service. Will definitely shop again!"</p>
+                        <h6>Hassan Khan</h6>
+                        <small class="text-muted">Verified Buyer</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Best online shopping experience! The website is user-friendly and secure."</p>
+                        <h6>Fatima Ali</h6>
+                        <small class="text-muted">Verified Buyer</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-white">
+                    <h3 class="mb-3">Subscribe to Our Newsletter</h3>
+                    <p>Get exclusive deals, new arrivals, and special offers directly to your inbox!</p>
+                </div>
+                <div class="col-md-6">
+                    <form id="newsletterForm" class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-light">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
